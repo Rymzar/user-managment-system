@@ -28,7 +28,7 @@ public class RegisterApiController {
 
         String hashed_password = BCrypt.hashpw(password, BCrypt.gensalt());
 
-        int result = userService.registerNewUserServiceMethod(login, email, phone, password);
+        int result = userService.registerNewUserServiceMethod(login, email, phone, hashed_password);
 
         if (result != 1) {
             return new ResponseEntity<>("Failed to register User", HttpStatus.BAD_REQUEST);
