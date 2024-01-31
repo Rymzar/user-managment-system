@@ -1,0 +1,11 @@
+POST http://localhost:8080/register
+Content-Type: application/json
+
+{"login": "firs",
+  "email": "angela@merkel.de",
+  "phone": "8903336633",
+  "password": "1234"
+}
+
+
+

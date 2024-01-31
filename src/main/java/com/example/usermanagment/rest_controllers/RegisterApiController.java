@@ -11,12 +11,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/v1")
+@RequestMapping("/user")
 public class RegisterApiController {
     @Autowired
     UserService userService;
 
-    @PostMapping("/user/register")
+    @PostMapping("/register")
     public ResponseEntity registerNewUser(@RequestParam("login") String login,
                                           @RequestParam("email")String email,
                                           @RequestParam("phone")String phone,
