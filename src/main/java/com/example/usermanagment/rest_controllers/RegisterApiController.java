@@ -25,15 +25,17 @@ public class RegisterApiController {
             return new ResponseEntity<>("Please complete all fields", HttpStatus.BAD_REQUEST);
         }
 
+        // Encrypt / Hash  Password:
         String hashed_password = BCrypt.hashpw(password, BCrypt.gensalt());
 
+        // Register New User:
         int result = userService.registerNewUserServiceMethod(login, email, phone, hashed_password);
 
-        if (result != 1) {
-            return new ResponseEntity<>("Failed to register User", HttpStatus.BAD_REQUEST);
+        if(result != 1){
+            return new ResponseEntity<>("failed", HttpStatus.BAD_REQUEST);
         }
 
-        return new ResponseEntity<>("User registered Successfully", HttpStatus.OK);
+        return new ResponseEntity<>("success", HttpStatus.OK);
 
     }
 }
